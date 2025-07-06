@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>صفحة منتج احترافية | GadgetFinderPro</title>
+  <meta name="description" content="اكتشف أحدث الأجهزة التقنية بأسعار تنافسية وضمانات متميزة" />
+  <meta name="keywords" content="أجهزة تقنية, سماعات لاسلكية, هواتف ذكية, إكسسوارات, مراجعات منتجات" />
+  <meta name="author" content="GadgetFinderPro" />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+  
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #10b981;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --light-gray: #e2e8f0;
+      --accent: #f97316;
+      --card-bg: #ffffff;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Tajawal', sans-serif;
+      color: var(--dark);
+      background-color: var(--light);
+      line-height: 1.6;
+      direction: rtl;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      background-color: white;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .nav-menu {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .nav-menu a:hover, 
+    .nav-menu a.active {
+      color: var(--primary);
+    }
+    
+    .nav-menu a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      right: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary);
+      border-radius: 2px;
+    }
+    
+    .mobile-menu {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(120deg, #2563eb, #1e40af);
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+    
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--secondary);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    }
+    
+    .btn-primary:hover {
+      background-color: #0da271;
+      transform: translateY(-3px);
+    }
+    
+    /* Products Section */
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+      color: var(--dark);
+      font-weight: 700;
+    }
+    
+    .products-grid {
+      padding: 60px 0;
+    }
+    
+    .products-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .product-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: var(--accent);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      z-index: 2;
+    }
+    
+    .product-badge.new {
+      background-color: var(--secondary);
+    }
+    
+    .product-badge.trending {
+      background-color: var(--primary);
+    }
+    
+    .product-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    
+    .product-content {
+      padding: 20px;
+    }
+    
+    .product-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+    
+    .rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      gap: 8px;
+    }
+    
+    .stars {
+      color: #fbbf24;
+      font-size: 1rem;
+    }
+    
+    .rating-text {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+    
+    .product-desc {
+      color: var(--gray);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+    
+    .price-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      justify-content: flex-end;
+    }
+    
+    .price {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    
+    .price-old {
+      font-size: 1rem;
+      text-decoration: line-through;
+      color: var(--gray);
+    }
+    
+    .discount {
+      background-color: #fee2e2;
+      color: #ef4444;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    
+    .btn-amazon {
+      display: block;
+      text-align: center;
+      background-color: #ff9900;
+      color: white;
+      padding: 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .btn-amazon:hover {
+      background-color: #e88a00;
+    }
+    
+    .btn-amazon i {
+      margin-left: 8px;
+    }
+    
+    /* Assurance Section */
+    .assurance-section {
+      background-color: #f1f5f9;
+      padding: 60px 0;
+      margin: 40px 0;
+    }
+    
+    .assurance-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .assurance-card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .assurance-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .assurance-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    
+    .assurance-card h3 {
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+    
+    .assurance-card p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+    
+    /* Single Product Page */
+    .product-detail {
+      padding: 60px 0;
+    }
+    
+    .product-detail-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    
+    .product-gallery {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 15px;
+    }
+    
+    .thumbnails {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .thumbnail {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition);
+    }
+    
+    .thumbnail.active, .thumbnail:hover {
+      border-color: var(--primary);
+    }
+    
+    .main-image {
+      width: 100%;
+      height: 500px;
+      object-fit: contain;
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    
+    .product-info h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--dark);
+    }
+    
+    .product-info .rating {
+      margin-bottom: 20px;
+    }
+    
+    .product-price {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    
+    .product-description {
+      color: var(--gray);
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+    
+    .product-features {
+      margin-bottom: 30px;
+    }
+    
+    .product-features h2 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+    
+    .features-list {
+      list-style-type: none;
+      padding-right: 20px;
+    }
+    
+    .features-list li {
+      position: relative;
+      padding-right: 25px;
+      margin-bottom: 10px;
+    }
+    
+    .features-list li:before {
+      content: "✓";
+      position: absolute;
+      right: 0;
+      color: var(--secondary);
+      font-weight: bold;
+    }
+    
+    .product-specs {
+      margin-bottom: 30px;
+    }
+    
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .specs-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    
+    .specs-table td:first-child {
+      font-weight: 600;
+      width: 30%;
+    }
+    
+    .action-buttons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    
+    .btn-buy {
+      flex: 1;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .btn-buy:hover {
+      background-color: var(--primary-dark);
+    }
+    
+    .reassurance-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #f0f9ff;
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+    
+    .customer-reviews {
+      margin-top: 60px;
+    }
+    
+    .reviews-container {
+      margin-top: 30px;
+    }
+    
+    .review-card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+    
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .reviewer {
+      font-weight: 600;
+    }
+    
+    .review-date {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    
+    .faq-section {
+      margin-top: 60px;
+    }
+    
+    .faq-container {
+      margin-top: 30px;
+    }
+    
+    .faq-item {
+      margin-bottom: 15px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    
+    .faq-question {
+      background-color: white;
+      padding: 15px 20px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .faq-answer {
+      background-color: #f8fafc;
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .faq-item.active .faq-answer {
+      padding: 20px;
+      max-height: 500px;
+    }
+    
+    /* Related Products */
+    .related-products {
+      margin-top: 80px;
+    }
+    
+    /* Contact Section */
+    .contact-section {
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .contact-section p {
+      color: var(--gray);
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .contact-info {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--light-gray);
+      padding: 15px 25px;
+      border-radius: 8px;
+    }
+    
+    .contact-info a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    
+    .contact-info a:hover {
+      color: var(--primary-dark);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 60px 0 20px;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--primary);
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+      color: white;
+      padding-right: 5px;
+    }
+    
+    .copyright-section {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #334155;
+    }
+    
+    .copyright {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+    
+    .amazon-disclaimer {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .product-detail-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+      
+      .mobile-menu {
+        display: block;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .product-gallery {
+        grid-template-columns: 1fr;
+      }
+      
+      .thumbnails {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 10px;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-link">تخطي إلى المحتوى الرئيسي</a>
+
+  <header role="banner">
+    <nav class="nav-container container" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="GadgetFinderPro - الصفحة الرئيسية">GadgetFinderPro</a>
+      <div class="nav-menu" role="menubar">
+        <a href="products.html" role="menuitem" class="active">المنتجات</a>
+        <a href="blog/wireless-earbuds-guide.html" role="menuitem">المدونة</a>
+        <a href="#contact" role="menuitem">اتصل بنا</a>
+      </div>
+      <button class="mobile-menu" aria-label="قائمة الجوال" aria-expanded="false">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content container">
+        <h1 id="hero-title">اكتشف أفضل الأجهزة التقنية لعام 2024</h1>
+        <p>مراجعات الخبراء وأدلة الشراء لأحدث المنتجات التقنية</p>
+        <a href="products.html" class="btn-primary" aria-describedby="hero-title">استكشف المنتجات</a>
+      </div>
+    </section>
+
+    <section id="products" class="products-grid container" aria-labelledby="products-title">
+      <h2 id="products-title" class="section-title">أفضل المنتجات لهذا الشهر</h2>
+      <div class="products-container">
+        <!-- Product 1 -->
+        <article class="product-card" itemscope itemtype="https://schema.org/Product">
+          <div class="product-badge">اختيار المحرر</div>
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" alt="سماعات لاسلكية بإلغاء الضوضاء" class="product-image" itemprop="image" />
+          <div class="product-content">
+            <h3 itemprop="name">سماعات لاسلكية بإلغاء الضوضاء</h3>
+            <div class="rating" data-rating="4.5" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+              <span class="stars" aria-label="4.5 من 5 نجوم">★★★★☆</span>
+              <span class="rating-text">(<span itemprop="ratingValue">4.5</span>/<span itemprop="bestRating">5</span>)</span>
+              <meta itemprop="reviewCount" content="1247" />
+            </div>
+            <p class="product-desc" itemprop="description">جودة صوت فائقة مع بطارية تدوم 40 ساعة وتقنية متقدمة لإلغاء الضوضاء</p>
+            <div class="price-section">
+              <div class="price">799 ر.س</div>
+              <div class="price-old">999 ر.س</div>
+              <div class="discount">-20%</div>
+            </div>
+            <a href="product-detail.html" class="btn-amazon" aria-label="شراء سماعات لاسلكية">
+              <i class="fas fa-shopping-cart"></i> عرض التفاصيل
+            </a>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="product-card" itemscope itemtype="https://schema.org/Product">
+          <div class="product-badge new">جديد</div>
+          <img src="https://images.unsplash.com/photo-1595941069915-4ebc5197c14a" alt="هاتف ذكي فاخر 2024" class="product-image" itemprop="image" />
+          <div class="product-content">
+            <h3 itemprop="name">هاتف ذكي فاخر 2024</h3>
+            <div class="rating" data-rating="4.3" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+              <span class="stars" aria-label="4.3 من 5 نجوم">★★★★☆</span>
+              <span class="rating-text">(<span itemprop="ratingValue">4.3</span>/<span itemprop="bestRating">5</span>)</span>
+              <meta itemprop="reviewCount" content="892" />
+            </div>
+            <p class="product-desc" itemprop="description">أحدث الأجهزة بمعالج فائق السرعة، كاميرا احترافية وشاشة OLED بتردد 120 هرتز</p>
+            <div class="price-section">
+              <div class="price">3,499 ر.س</div>
+            </div>
+            <a href="product-detail.html" class="btn-amazon" aria-label="شراء هاتف ذكي">
+              <i class="fas fa-shopping-cart"></i> عرض التفاصيل
+            </a>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="product-card" itemscope itemtype="https://schema.org/Product">
+          <img src="https://images.unsplash.com/photo-1606220588910-0a8b1ee2e5ae" alt="شاحن لاسلكي سريع" class="product-image" itemprop="image" />
+          <div class="product-content">
+            <h3 itemprop="name">شاحن لاسلكي سريع</h3>
+            <div class="rating" data-rating="4.7" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+              <span class="stars" aria-label="4.7 من 5 نجوم">★★★★★</span>
+              <span class="rating-text">(<span itemprop="ratingValue">4.7</span>/<span itemprop="bestRating">5</span>)</span>
+              <meta itemprop="reviewCount" content="2156" />
+            </div>
+            <p class="product-desc" itemprop="description">شاحن لاسلكي فائق السرعة متوافق مع جميع أجهزة Qi. تصميم أنيق وشحن آمن</p>
+            <div class="price-section">
+              <div class="price">149 ر.س</div>
+              <div class="price-old">229 ر.س</div>
+              <div class="discount">-35%</div>
+            </div>
+            <a href="product-detail.html" class="btn-amazon" aria-label="شراء شاحن لاسلكي">
+              <i class="fas fa-shopping-cart"></i> عرض التفاصيل
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Assurance Section -->
+    <section class="assurance-section" aria-labelledby="assurance-title">
+      <div class="container">
+        <h2 id="assurance-title" class="section-title">ضمانات وخدماتنا</h2>
+        <div class="assurance-grid">
+          <div class="assurance-card">
+            <div class="assurance-icon">
+              <i class="fas fa-shipping-fast"></i>
+            </div>
+            <h3>شحن سريع</h3>
+            <p>توصيل سريع خلال 2-3 أيام عمل لجميع أنحاء المملكة</p>
+          </div>
+          
+          <div class="assurance-card">
+            <div class="assurance-icon">
+              <i class="fas fa-undo"></i>
+            </div>
+            <h3>إرجاع سهل</h3>
+            <p>إرجاع المنتجات خلال 14 يوم بدون أي تعقيدات</p>
+          </div>
+          
+          <div class="assurance-card">
+            <div class="assurance-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>ضمان لمدة عامين</h3>
+            <p>ضمان شامل من المصنع لمدة عامين على جميع المنتجات</p>
+          </div>
+          
+          <div class="assurance-card">
+            <div class="assurance-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>دعم فني</h3>
+            <p>دعم فني متاح على مدار الساعة طوال أيام الأسبوع</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Single Product Detail Page -->
+    <section class="product-detail container" aria-labelledby="product-title">
+      <div class="product-detail-container">
+        <div class="product-gallery">
+          <div class="thumbnails">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" alt="سماعات لاسلكية - صورة 1" class="thumbnail active">
+            <img src="https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b" alt="سماعات لاسلكية - صورة 2" class="thumbnail">
+            <img src="https://images.unsplash.com/photo-1545127398-14699f92334b" alt="سماعات لاسلكية - صورة 3" class="thumbnail">
+            <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b" alt="سماعات لاسلكية - صورة 4" class="thumbnail">
+          </div>
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" alt="سماعات لاسلكية بإلغاء الضوضاء" class="main-image">
+        </div>
+        
+        <div class="product-info">
+          <h1 id="product-title">سماعات لاسلكية بإلغاء الضوضاء</h1>
+          <div class="rating" data-rating="4.5">
+            <span class="stars" aria-label="4.5 من 5 نجوم">★★★★☆</span>
+            <span class="rating-text">(1247 تقييم)</span>
+          </div>
+          
+          <div class="product-price">799 ر.س</div>
+          <div class="price-old">999 ر.س</div>
+          
+          <p class="product-description">
+            استمتع بتجربة صوتية استثنائية مع سماعاتنا اللاسلكية المميزة. تتميز بتقنية متقدمة لإلغاء الضوضاء تتيح لك التركيز على الموسيقى أو المكالمات دون أي تشويش. البطارية تدوم حتى 40 ساعة مع شحن سريع خلال 15 دقيقة فقط.
+          </p>
+          
+          <div class="product-features">
+            <h2>المميزات الرئيسية</h2>
+            <ul class="features-list">
+              <li>تقنية متقدمة لإلغاء الضوضاء</li>
+              <li>بطارية تدوم حتى 40 ساعة</li>
+              <li>شحن سريع خلال 15 دقيقة</li>
+              <li>مقاومة للماء والعرق (IPX7)</li>
+              <li>ميكروفون عالي الجودة للمكالمات</li>
+              <li>تحكم باللمس على السماعات</li>
+            </ul>
+          </div>
+          
+          <div class="product-specs">
+            <h2>المواصفات الفنية</h2>
+            <table class="specs-table">
+              <tr>
+                <td>نوع المنتج</td>
+                <td>سماعات لاسلكية</td>
+              </tr>
+              <tr>
+                <td>التقنية</td>
+                <td>بلوتوث 5.2</td>
+              </tr>
+              <tr>
+                <td>مدة البطارية</td>
+                <td>40 ساعة (مع الحافظة)</td>
+              </tr>
+              <tr>
+                <td>وقت الشحن</td>
+                <td>ساعتين (شحن سريع 15 دقيقة = 5 ساعات)</td>
+              </tr>
+              <tr>
+                <td>مقاومة الماء</td>
+                <td>IPX7 (مقاوم للغمر في الماء حتى 1 متر)</td>
+              </tr>
+              <tr>
+                <td>الوزن</td>
+                <td>48 جرام (لكل سماعة)</td>
+              </tr>
+            </table>
+          </div>
+          
+          <div class="action-buttons">
+            <button class="btn-buy">أضف إلى السلة</button>
+          </div>
+          
+          <div class="reassurance-badges">
+            <div class="badge">
+              <i class="fas fa-shipping-fast"></i>
+              شحن مجاني
+            </div>
+            <div class="badge">
+              <i class="fas fa-undo"></i>
+              إرجاع خلال 14 يوم
+            </div>
+            <div class="badge">
+              <i class="fas fa-shield-alt"></i>
+              ضمان سنتين
+            </div>
+            <div class="badge">
+              <i class="fas fa-lock"></i>
+              دفع آمن
+            </div>
+          </div>
+          
+          <div class="customer-reviews">
+            <h2>تقييمات العملاء</h2>
+            <div class="reviews-container">
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="reviewer">محمد أحمد</div>
+                  <div class="review-date">15 يناير 2024</div>
+                </div>
+                <div class="rating">
+                  <span class="stars">★★★★★</span>
+                </div>
+                <p>تجربة رائعة مع هذه السماعات! جودة الصوت ممتازة وإلغاء الضوضاء فعال جداً. البطارية تدوم طويلاً كما هو موعود. أنصح بها بشدة.</p>
+              </div>
+              
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="reviewer">سارة خالد</div>
+                  <div class="review-date">8 يناير 2024</div>
+                </div>
+                <div class="rating">
+                  <span class="stars">★★★★☆</span>
+                </div>
+                <p>السماعات ممتازة بشكل عام، الصوت قوي وواضح. فقط أتمنى لو أن حجمها أصغر قليلاً للأذن الصغيرة. الخدمة من المتجر كانت ممتازة.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-section">
+            <h2>الأسئلة الشائعة</h2>
+            <div class="faq-container">
+              <div class="faq-item">
+                <div class="faq-question">
+                  هل السماعات مقاومة للماء؟
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  نعم، السماعات مقاومة للماء والعرق بدرجة IPX7 مما يعني أنها تتحمل الغمر في الماء حتى عمق 1 متر لمدة 30 دقيقة.
+                </div>
+              </div>
+              
+              <div class="faq-item">
+                <div class="faq-question">
+                  ما هي مدة الضمان؟
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  جميع منتجاتنا تأتي بضمان لمدة سنتين من تاريخ الشراء. يغطي الضمان عيوب التصنيع.
+                </div>
+              </div>
+              
+              <div class="faq-item">
+                <div class="faq-question">
+                  كيف يمكنني إرجاع المنتج؟
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  يمكنك إرجاع المنتج خلال 14 يوم من تاريخ الاستلام عن طريق التواصل مع خدمة العملاء. يجب أن يكون المنتج في حالته الأصلية مع جميع الملحقات.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products container" aria-labelledby="related-title">
+      <h2 id="related-title" class="section-title">منتجات ذات صلة</h2>
+      <div class="products-container">
+        <!-- Product 4 -->
+        <article class="product-card" itemscope itemtype="https://schema.org/Product">
+          <div class="product-badge trending">الأكثر مبيعاً</div>
+          <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df" alt="سماعة ذكية" class="product-image" itemprop="image" />
+          <div class="product-content">
+            <h3 itemprop="name">سماعة ذكية</h3>
+            <div class="rating" data-rating="4.4" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+              <span class="stars" aria-label="4.4 من 5 نجوم">★★★★☆</span>
+              <span class="rating-text">(<span itemprop="ratingValue">4.4</span>/<span itemprop="bestRating">5</span>)</span>
+              <meta itemprop="reviewCount" content="3421" />
+            </div>
+            <p class="product-desc" itemprop="description">مساعد صوتي ذكي مع صوت 360 درجة وتحكم في المنزل الذكي</p>
+            <div class="price-section">
+              <div class="price">499 ر.س</div>
+            </div>
+            <a href="product-detail.html" class="btn-amazon" aria-label="شراء سماعة ذكية">
+              <i class="fas fa-shopping-cart"></i> عرض التفاصيل
+            </a>
+          </div>
+        </article>
+
+        <!-- Product 5 -->
+        <article class="product-card" itemscope itemtype="https://schema.org/Product">
+          <img src="https://images.unsplash.com/photo-1591370874773-6702e8f12fd8" alt="سماعات أذن لاسلكية" class="product-image" itemprop="image" />
+          <div class="product-content">
+            <h3 itemprop="name">سماعات أذن لاسلكية</h3>
+            <div class="rating" data-rating="4.2" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+              <span class="stars" aria-label="4.2 من 5 نجوم">★★★★☆</span>
+              <span class="rating-text">(<span itemprop="ratingValue">4.2</span>/<span itemprop="bestRating">5</span>)</span>
+              <meta itemprop="reviewCount" content="1876" />
+            </div>
+            <p class="product-desc" itemprop="description">سماعات أذن لاسلكية صغيرة مع حافظة شحن. مثالية للرياضة والاستخدام اليومي</p>
+            <div class="price-section">
+              <div class="price">299 ر.س</div>
+              <div class="price-old">399 ر.س</div>
+              <div class="discount">-25%</div>
+            </div>
+            <a href="product-detail.html" class="btn-amazon" aria-label="شراء سماعات أذن لاسلكية">
+              <i class="fas fa-shopping-cart"></i> عرض التفاصيل
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title" class="section-title">اتصل بنا</h2>
+        <p>هل لديك أسئلة حول منتجاتنا؟ تواصل مع فريق الخبراء لدينا.</p>
+        <div class="contact-info">
+          <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:contact@gadgetfinderpro.com">contact@gadgetfinderpro.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>عن المتجر</h3>
+          <ul class="footer-links">
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="blog.html">المدونة</a></li>
+            <li><a href="careers.html">الوظائف</a></li>
+            <li><a href="press.html">المركز الإعلامي</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>خدمة العملاء</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">اتصل بنا</a></li>
+            <li><a href="shipping-policy.html">سياسة الشحن</a></li>
+            <li><a href="return-policy.html">سياسة الإرجاع</a></li>
+            <li><a href="faq.html">الأسئلة الشائعة</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>الحساب</h3>
+          <ul class="footer-links">
+            <li><a href="account.html">حسابي</a></li>
+            <li><a href="orders.html">طلباتي</a></li>
+            <li><a href="wishlist.html">قائمة الرغبات</a></li>
+            <li><a href="track-order.html">تتبع الطلب</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>المساعدة</h3>
+          <ul class="footer-links">
+            <li><a href="size-guide.html">دليل المقاسات</a></li>
+            <li><a href="product-guide.html">دليل المنتجات</a></li>
+            <li><a href="privacy.html">سياسة الخصوصية</a></li>
+            <li><a href="terms.html">شروط الاستخدام</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright-section">
+        <p class="amazon-disclaimer">كمساهم في برنامج الشركاء التابعين لـ Amazon، أكسب من عمليات الشراء المؤهلة.</p>
+        <p class="copyright">&copy; 2024 GadgetFinderPro. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu functionality
+      const mobileMenuBtn = document.querySelector('.mobile-menu');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      mobileMenuBtn.addEventListener('click', function() {
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+      });
+      
+      // Product gallery
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      const mainImage = document.querySelector('.main-image');
+      
+      thumbnails.forEach(thumb => {
+        thumb.addEventListener('click', function() {
+          // Remove active class from all thumbnails
+          thumbnails.forEach(t => t.classList.remove('active'));
+          // Add active class to clicked thumbnail
+          this.classList.add('active');
+          // Change main image source
+          mainImage.src = this.src;
+          mainImage.alt = this.alt;
+        });
+      });
+      
+      // FAQ accordion
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+          const faqItem = this.parentElement;
+          faqItem.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
